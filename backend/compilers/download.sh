@@ -25,6 +25,10 @@ curl -L "https://github.com/ethteck/ido-static-recomp/releases/download/master/i
 mkdir -p "$compiler_dir/ido7.1"
 curl -L "https://github.com/ethteck/ido-static-recomp/releases/download/master/ido-7.1-recomp-$ido_os-latest.tar.gz" | tar zx -C "$compiler_dir/ido7.1"
 
+# clang-4.0.1 (should probably get separate downloads for linux/ubuntu - macos)
+curl -L "https://releases.llvm.org/4.0.1/clang+llvm-4.0.1-x86_64-linux-gnu-debian8.tar.xz" | tar xJ -C "$compiler_dir"
+mv "$compiler_dir/clang+llvm-4.0.1-x86_64-linux-gnu-debian8/" "$compiler_dir/clang-4.0.1"
+
 # gcc2.7kmc
 if [[ "$uname" != "Darwin" ]]; then
     mkdir -p "$compiler_dir/gcc2.7kmc"
