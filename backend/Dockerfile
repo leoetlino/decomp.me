@@ -36,6 +36,7 @@ FROM base AS build
 
 RUN apt-get -y update && apt-get install -y \
     binutils-mips-linux-gnu \
+    binutils-aarch64-linux-gnu \
     curl \
     gcc-mips-linux-gnu \
     libnl-route-3-200 \
@@ -43,6 +44,8 @@ RUN apt-get -y update && apt-get install -y \
     netcat \
     unzip \
     wget \
+    libtinfo5 \
+    libc6-dev-i386 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /backend/requirements.txt
