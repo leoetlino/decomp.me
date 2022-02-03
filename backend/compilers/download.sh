@@ -29,6 +29,10 @@ curl -L "https://github.com/ethteck/ido-static-recomp/releases/download/master/i
 curl -L "https://releases.llvm.org/4.0.1/clang+llvm-4.0.1-x86_64-linux-gnu-debian8.tar.xz" | tar xJ -C "$compiler_dir"
 mv "$compiler_dir/clang+llvm-4.0.1-x86_64-linux-gnu-debian8/" "$compiler_dir/clang-4.0.1"
 
+# clang-3.9.1 (should probably get separate downloads for linux/ubuntu - macos)
+curl -L "https://releases.llvm.org/3.9.1/clang+llvm-3.9.1-x86_64-linux-gnu-debian8.tar.xz" | tar xJ -C "$compiler_dir"
+mv "$compiler_dir/clang+llvm-3.9.1-x86_64-linux-gnu-debian8/" "$compiler_dir/clang-3.9.1"
+
 # gcc2.7kmc
 if [[ "$uname" != "Darwin" ]]; then
     mkdir -p "$compiler_dir/gcc2.7kmc"
